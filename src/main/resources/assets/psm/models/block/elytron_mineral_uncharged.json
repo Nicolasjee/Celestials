@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "psm:blocks/elytron_mineral_uncharged"
+    }
+}

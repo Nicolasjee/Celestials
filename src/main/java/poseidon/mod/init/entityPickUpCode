@@ -1,0 +1,111 @@
+@SubscribeEvent
+    public static void onEntityPickup(EntityItemPickupEvent event) {
+        
+        EntityPlayer player = event.getEntityPlayer();
+        EntityItem item = event.getItem();
+        ItemStack stack = item.getItem();
+        int count = stack.getCount();
+        
+        if(player != null && item != null && stack != null) {
+            
+            if(stack.getItem() == ItemInit.SOUL && !ItemVileOfSouls.hasVile(player) && event.isCancelable()) {
+                player.sendStatusMessage(new TextComponentTranslation(TextFormatting.GRAY + "You need a " + TextFormatting.GREEN + "soul vile" + TextFormatting.GRAY + " to pick up souls", new Object[0]), true);
+                event.setCanceled(true);
+            }
+            
+            if(stack.getItem() == ItemInit.SOUL && ItemVileOfSouls.hasVile(player)) {
+                
+                ItemStack vile = null;
+                
+                for(int i = 0; i < 36; i ++) {
+                    ItemStack check = player.inventory.getStackInSlot(i);
+                    if(check.getItem() == (new ItemStack(ItemInit.VILE_OF_SOULS)).getItem()) vile = check;
+                    if(check.getItem() == (new ItemStack(ItemInit.MEDIUM_VILE_OF_SOULS)).getItem()) vile = check;
+                    if(check.getItem() == (new ItemStack(ItemInit.SMALL_VILE_OF_SOULS)).getItem()) vile = check;
+                }
+                
+                if(vile == null) vile = player.getHeldItemOffhand();
+                
+                if(vile.hasTagCompound()) {
+
+                    NBTTagCompound nbt = vile.getTagCompound();
+                    int d = nbt.getInteger("Durability");
+                    int s = nbt.getInteger("Size");
+                    
+                    if(d < s) { //Size: medium.. - Durabilyt: stored souls
+                        //If durability < size => has this item reached its max durability?
+                        
+                        if(count + d > s) {
+                            //Amount of picked up souls + durability > size?
+                            int leftOver = s - d; //Left over = amount of space left
+                            int soulsToFill = count - leftOver; //sTF = amount of souls to store
+                            
+                            
+                            for(int i = 0; i < leftOver; i++) {
+                                nbt.setInteger("Durability", nbt.getInteger("Durability") + 1); 
+                                player.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 10, 100));
+                            }
+                            
+                            stack.shrink(count);
+                            if(event.isCancelable())event.setCanceled(true);
+                            event.setResult(Result.DENY);
+                            
+                            ItemStack souls = new ItemStack(ItemInit.SOUL);
+                            souls.setCount(soulsToFill);
+                            ItemHandlerHelper.giveItemToPlayer(player, souls);
+                            
+                        }
+                        
+                        if(count + d < s) {
+                        
+                            for(int i = 0; i < count; i++) {
+                                nbt.setInteger("Durability", nbt.getInteger("Durability") + 1); 
+                                player.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 10, 100));
+                            }
+                            
+                            stack.shrink(count);
+                            if(event.isCancelable())event.setCanceled(true);
+                            event.setResult(Result.DENY);
+                    
+                        }
+                    }
+                }
+            }
+            
+            if(stack.getItem() == ItemInit.SOUL && (player.getHeldItemMainhand().getItem() == ItemInit.JUPITERS_STAFF || player.getHeldItemOffhand().getItem() == ItemInit.JUPITERS_STAFF)) {
+                ItemStack jup = ItemStack.EMPTY;
+                
+                if(player.getHeldItemMainhand().getItem() == ItemInit.JUPITERS_STAFF) jup = player.getHeldItemMainhand();
+                if(player.getHeldItemOffhand().getItem() == ItemInit.JUPITERS_STAFF) jup = player.getHeldItemOffhand();
+                
+                if(jup != ItemStack.EMPTY && jup.hasTagCompound()) {
+                    
+                    jup.getTagCompound().setInteger("Durability", jup.getTagCompound().getInteger("Durability") + count*20);
+                    stack.shrink(count);
+                    if(event.isCancelable())event.setCanceled(true);
+                    event.setResult(Result.DENY);
+                    
+                }
+                
+            }
+            
+            if(stack.getItem() == ItemInit.ELYTRON_DUST && (player.getHeldItemMainhand().getItem() == ItemInit.JUPITERS_STAFF || player.getHeldItemOffhand().getItem() == ItemInit.JUPITERS_STAFF)) {
+                ItemStack jup = ItemStack.EMPTY;
+                
+                if(player.getHeldItemMainhand().getItem() == ItemInit.JUPITERS_STAFF) jup = player.getHeldItemMainhand();
+                if(player.getHeldItemOffhand().getItem() == ItemInit.JUPITERS_STAFF) jup = player.getHeldItemOffhand();
+                
+                if(jup != ItemStack.EMPTY && jup.hasTagCompound()) {
+                    
+                    jup.getTagCompound().setInteger("Charge", jup.getTagCompound().getInteger("Charge") + count*4);
+                    stack.shrink(count);
+                    if(event.isCancelable())event.setCanceled(true);
+                    event.setResult(Result.DENY);
+                    
+                }
+                
+            }
+            
+        }
+    }
+        

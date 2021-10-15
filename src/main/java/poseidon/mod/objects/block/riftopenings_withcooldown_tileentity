@@ -1,0 +1,57 @@
+
+    private int tick = 0;
+    private int count = 0;
+    public double x = 0.0D;
+    public double y = 0.0D;
+    public double z = 0.0D;
+    private boolean s = false;
+    public boolean init = false;
+    public boolean wait = false;
+    
+    @Override
+    public void update() {
+        
+        if(!world.isRemote && !wait) {
+            
+
+            ParticleUtil.riftOpeningSteps((WorldServer)world, this.pos.up(), EnumParticleTypes.DRAGON_BREATH, tick);
+            if(!s) tick = tick +4;
+            if(s) tick = tick - 4;
+        }
+        
+        //use this line to create a never lasting opening circle that goes in the sky
+        //if(tick == 360) tick = 0;
+        if(tick >= 360 && !wait) { // s true
+            wait = true;
+            tick = 0;
+        }
+        if(tick <= 1 && !wait) {
+            wait = true;
+            tick = 0;
+        }
+        
+        if(wait && tick < 30) {
+            if(!s) if(!world.isRemote) world.spawnParticle(EnumParticleTypes.DRAGON_BREATH, false, x + 0.5D, y + 3.6D, z + 0.5D, 0.0D, 0.0D, 0.0D);
+            if(s) if(!world.isRemote) world.spawnParticle(EnumParticleTypes.DRAGON_BREATH, false, x + 0.5D, y + 1.0D, z + 0.5D, 0.0D, 0.0D, 0.0D);
+        }
+        
+        if(tick == 30 && wait) {
+            if(!s) {
+                wait = false;
+                s = true;
+                tick = 360;
+                return;
+            }
+            
+            if(s) {
+                wait = false;
+                s = false;
+                tick = 0;
+                return;
+            }
+            
+        }
+        
+        tick++;
+    }
+    

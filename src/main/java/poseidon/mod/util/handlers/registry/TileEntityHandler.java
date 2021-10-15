@@ -1,0 +1,94 @@
+package poseidon.mod.util.handlers.registry;
+
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import poseidon.mod.objects.block.aiolonsynth.TileEntityAiolonAir;
+import poseidon.mod.objects.block.aiolonsynth.TileEntityAiolonSynth;
+import poseidon.mod.objects.block.crystalsplitter.TileEntitySplitter;
+import poseidon.mod.objects.block.drawVortex.TileEntityDraw;
+import poseidon.mod.objects.block.drawVortex.TileEntityTest;
+import poseidon.mod.objects.block.drawbridge.TileEntityDrawbridge;
+import poseidon.mod.objects.block.energyshield.TileEntityEnergyShield;
+import poseidon.mod.objects.block.expansiontable.TileEntityExpansionTable;
+import poseidon.mod.objects.block.general.chest.obsidian.TileEntityObsidianChest;
+import poseidon.mod.objects.block.general.chest.sand.TileEntitySandChest;
+import poseidon.mod.objects.block.general.elytroncrop.TileEntityElytronCrop;
+import poseidon.mod.objects.block.general.lighthelp.TileEntityEnlighten;
+import poseidon.mod.objects.block.general.lighthelp.TileEntityRipple;
+import poseidon.mod.objects.block.general.projector.TileEntityField;
+import poseidon.mod.objects.block.general.tileHelpers.TileEntityBounce;
+import poseidon.mod.objects.block.general.tileHelpers.TileEntityDemonAir;
+import poseidon.mod.objects.block.general.tileHelpers.TileEntityLava;
+import poseidon.mod.objects.block.general.tileHelpers.TileEntityLight;
+import poseidon.mod.objects.block.general.tileHelpers.TileEntityMagma;
+import poseidon.mod.objects.block.general.tileHelpers.TileEntityMozesAir;
+import poseidon.mod.objects.block.general.tileHelpers.TileEntityShield;
+import poseidon.mod.objects.block.general.tileHelpers.TileEntitySynchronisor;
+import poseidon.mod.objects.block.laser.TileEntityLaser;
+import poseidon.mod.objects.block.miners.TileEntityMiner;
+import poseidon.mod.objects.block.netherreactor.TileEntitySpawnerNether;
+import poseidon.mod.objects.block.netherreactor.nethercore.crates.TileEntityCrate;
+import poseidon.mod.objects.block.netherreactor.nethercore.handlers.TileEntityNetherCorruption;
+import poseidon.mod.objects.block.netherreactor.nethercore.handlers.TileEntityNetherParticles;
+import poseidon.mod.objects.block.netherreactor.nethercore.handlers.TileEntityNetherWart;
+import poseidon.mod.objects.block.netherreactor.nethercore.handlers.TileEntitySinkhole;
+import poseidon.mod.objects.block.netherreactor.nethercore.handlers.TileEntitySpawnerMobsNether;
+import poseidon.mod.objects.block.netherreactor.nethercore.handlers.TileEntityUnbreakableNetherrack;
+import poseidon.mod.objects.block.netherreactor.nethercore.handlers.TileEntityUnbreakableNetherrack2;
+import poseidon.mod.objects.block.netherreactor.nethercore.helpers.TileEntityItemAir;
+import poseidon.mod.objects.block.netherreactor.nethercore.reactor.TileEntityNetherReactor;
+import poseidon.mod.objects.block.particlehelpers.ParticleHelperSummonerTileEntity;
+import poseidon.mod.objects.block.particlehelpers.TileEntityParticle;
+import poseidon.mod.objects.block.particlerods.TileEntityParticleRod;
+import poseidon.mod.objects.block.redstonereceiver.TileEntityRedstoneReceiver;
+import poseidon.mod.objects.block.riftblock.TileEntityRiftTeleporter;
+import poseidon.mod.objects.block.summoner.extended.TileEntitySummoner;
+import poseidon.mod.objects.block.teslagenerator.TileEntityTeslaGenerator;
+
+public class TileEntityHandler {
+	
+	public static void registerTileEntities() {
+		GameRegistry.registerTileEntity(TileEntityExpansionTable.class, "psm:expansion_table");
+		GameRegistry.registerTileEntity(TileEntityParticle.class, "psm:particle");
+		GameRegistry.registerTileEntity(TileEntityParticleRod.class, "psm:particlerod");
+		GameRegistry.registerTileEntity(ParticleHelperSummonerTileEntity.class, "psm:particle2");
+		GameRegistry.registerTileEntity(TileEntityRedstoneReceiver.class, "psm:redstone_receiver");
+		GameRegistry.registerTileEntity(TileEntityAiolonSynth.class, "psm:aiolon_synth");
+		GameRegistry.registerTileEntity(TileEntityAiolonAir.class, "psm:aiolon_air");
+		GameRegistry.registerTileEntity(TileEntityDrawbridge.class, "psm:drawbridge");
+		GameRegistry.registerTileEntity(TileEntityMiner.class, "psm:miner");
+		GameRegistry.registerTileEntity(TileEntityMozesAir.class, "psm:mozesair");
+		GameRegistry.registerTileEntity(TileEntityDraw.class, "psm:draw");
+		GameRegistry.registerTileEntity(TileEntityTeslaGenerator.class, "psm:tesla");
+		GameRegistry.registerTileEntity(TileEntitySummoner.class, "psm:summoner");
+		GameRegistry.registerTileEntity(TileEntityObsidianChest.class, "psm:obsidian_chest");
+		GameRegistry.registerTileEntity(TileEntityLaser.class, "psm:laser");
+		GameRegistry.registerTileEntity(TileEntitySplitter.class, "psm:splitter");
+		GameRegistry.registerTileEntity(TileEntitySandChest.class, "psm:sandchest");
+		GameRegistry.registerTileEntity(TileEntityDemonAir.class, "psm:demon_air");
+		GameRegistry.registerTileEntity(TileEntityField.class, "psm:field");
+		GameRegistry.registerTileEntity(TileEntityMagma.class, "psm:magma");
+		GameRegistry.registerTileEntity(TileEntityLight.class, "psm:light");
+		GameRegistry.registerTileEntity(TileEntityEnlighten.class, "psm:enlight");
+		GameRegistry.registerTileEntity(TileEntityRipple.class, "psm:ripple");
+		GameRegistry.registerTileEntity(TileEntityLava.class, "psm:lava");
+		GameRegistry.registerTileEntity(TileEntityBounce.class, "psm:bounce");
+		GameRegistry.registerTileEntity(TileEntityShield.class, "psm:shield");
+		GameRegistry.registerTileEntity(TileEntityElytronCrop.class, "psm:cropElytron");
+		GameRegistry.registerTileEntity(TileEntityEnergyShield.class, "psm:energyshield");
+		GameRegistry.registerTileEntity(TileEntitySpawnerNether.class, "psm:nether_spawner");
+		GameRegistry.registerTileEntity(TileEntitySpawnerMobsNether.class, "psm:nether_spawner_mobs");
+		GameRegistry.registerTileEntity(TileEntityRiftTeleporter.class, "psm:rift");
+		GameRegistry.registerTileEntity(TileEntityItemAir.class, "psm:itemchecker");
+		GameRegistry.registerTileEntity(TileEntityNetherParticles.class, "psm:nether_particles");
+		GameRegistry.registerTileEntity(TileEntityNetherCorruption.class, "psm:nether_corruption");
+		GameRegistry.registerTileEntity(TileEntityUnbreakableNetherrack.class, "psm:unb_nether");
+		GameRegistry.registerTileEntity(TileEntityUnbreakableNetherrack2.class, "psm:unb_nether2");
+		GameRegistry.registerTileEntity(TileEntityCrate.class, "psm:crate");
+		GameRegistry.registerTileEntity(TileEntityNetherReactor.class, "psm:nether_reactor");
+		GameRegistry.registerTileEntity(TileEntitySinkhole.class, "psm:sinkhole");
+		GameRegistry.registerTileEntity(TileEntityNetherWart.class, "psm:nether_wart");
+		GameRegistry.registerTileEntity(TileEntitySynchronisor.class, "psm:synchronisor");
+		GameRegistry.registerTileEntity(TileEntityTest.class, "psm:test_tile");
+	}
+
+}

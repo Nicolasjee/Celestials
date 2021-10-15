@@ -1,0 +1,11 @@
+{
+
+    "variants":
+    {
+        "facing=north": { "model": "psm:miner" },
+        "facing=east": { "model": "psm:miner", "y": 90 },
+        "facing=south": { "model": "psm:miner", "y": 180 },
+        "facing=west": { "model": "psm:miner", "y": 270 }
+    }
+
+}

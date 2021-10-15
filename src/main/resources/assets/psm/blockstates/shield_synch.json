@@ -1,0 +1,11 @@
+{
+
+    "variants":
+    {
+        "facing=north": { "model": "psm:shield_synch" },
+        "facing=east": { "model": "psm:shield_synch", "y": 90 },
+        "facing=south": { "model": "psm:shield_synch", "y": 180 },
+        "facing=west": { "model": "psm:shield_synch", "y": 270 }
+    }
+
+}

@@ -1,0 +1,11 @@
+{
+
+    "variants":
+    {
+        "facing=north": { "model": "psm:flux_inductor" },
+        "facing=east": { "model": "psm:flux_inductor", "y": 90 },
+        "facing=south": { "model": "psm:flux_inductor", "y": 180 },
+        "facing=west": { "model": "psm:flux_inductor", "y": 270 }
+    }
+
+}

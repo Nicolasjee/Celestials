@@ -1,0 +1,13 @@
+{
+    "parent": "block/orientable",
+    "textures": 
+    {
+        "particle": "psm:blocks/launchpad_front_off",
+        "up": "psm:blocks/launchpad_front_side1",
+        "down": "psm:blocks/launchpad_front_side2",
+        "north": "psm:blocks/launchpad_side",
+        "east": "psm:blocks/launchpad_side",
+        "south": "psm:blocks/launchpad_side",
+        "west": "psm:blocks/launchpad_side"
+    }
+}

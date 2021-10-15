@@ -1,0 +1,11 @@
+{
+
+    "variants":
+    {
+        "facing=north": { "model": "psm:launchpad" },
+        "facing=east": { "model": "psm:launchpad", "y": 90 },
+        "facing=south": { "model": "psm:launchpad", "y": 180 },
+        "facing=west": { "model": "psm:launchpad", "y": 270 }
+    }
+
+}

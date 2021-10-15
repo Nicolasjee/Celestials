@@ -1,0 +1,13 @@
+{
+    "parent": "block/orientable",
+    "textures": 
+    {
+        "particle": "psm:blocks/flux_inductor_front_off",
+        "up": "psm:blocks/flux_inductor_front_side1",
+        "down": "psm:blocks/flux_inductor_front_side2",
+        "north": "psm:blocks/flux_inductor_front_off",
+        "east": "psm:blocks/flux_inductor_side1",
+        "south": "psm:blocks/flux_inductor_side3",
+        "west": "psm:blocks/flux_inductor_side2"
+    }
+}

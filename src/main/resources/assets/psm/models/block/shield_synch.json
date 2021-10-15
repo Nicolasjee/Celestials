@@ -1,0 +1,13 @@
+{
+    "parent": "block/orientable",
+    "textures": 
+    {
+        "particle": "psm:blocks/shield_synch_sides",
+        "up": "psm:blocks/shield_synch_up",
+        "down": "psm:blocks/shield_synch_sides",
+        "north": "psm:blocks/shield_synch_sides",
+        "east": "psm:blocks/shield_synch_sides",
+        "south": "psm:blocks/shield_synch_sides",
+        "west": "psm:blocks/shield_synch_sides"
+    }
+}

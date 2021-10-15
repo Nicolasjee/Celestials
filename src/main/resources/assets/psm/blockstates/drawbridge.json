@@ -1,0 +1,11 @@
+{
+
+    "variants":
+    {
+        "facing=north": { "model": "psm:drawbridge" },
+        "facing=east": { "model": "psm:drawbridge", "y": 90 },
+        "facing=south": { "model": "psm:drawbridge", "y": 180 },
+        "facing=west": { "model": "psm:drawbridge", "y": 270 }
+    }
+
+}

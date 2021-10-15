@@ -1,0 +1,31 @@
+        if(t == 9) {
+            while(i < 1.5D) {
+                w.spawnParticle(EnumParticleTypes.END_ROD, CoH.k(1, p, 1) + i, CoH.k(1, p, 2) + k, CoH.k(1, p, 3), rand.nextGaussian() * 0.005D, rand.nextGaussian() * 0.005D, rand.nextGaussian() * 0.005D);
+                i = i + 0.009D;
+                k = k + sp;
+            }
+        }
+        
+        if(t == 10) {
+            while(i < 1.5D) {
+                w.spawnParticle(EnumParticleTypes.END_ROD, CoH.k(2, p, 1), CoH.k(2, p, 2) + k, CoH.k(2, p, 3) - i, rand.nextGaussian() * 0.005D, rand.nextGaussian() * 0.005D, rand.nextGaussian() * 0.005D);
+                i = i + 0.009D;
+                k = k + sp;
+            }
+        }
+        
+        if(t == 11) {
+            while(i < 1.5D) {
+                w.spawnParticle(EnumParticleTypes.END_ROD, CoH.k(3, p, 1) - i, CoH.k(3, p, 2) + k, CoH.k(3, p, 3), rand.nextGaussian() * 0.005D, rand.nextGaussian() * 0.005D, rand.nextGaussian() * 0.005D);
+                i = i + 0.009D;
+                k = k + sp;
+            }
+        }        
+        
+        if(t == 12) {
+            while(i < 1.5D) {
+                w.spawnParticle(EnumParticleTypes.END_ROD, CoH.k(4, p, 1), CoH.k(4, p, 2) + k, CoH.k(4, p, 3) + i, rand.nextGaussian() * 0.005D, rand.nextGaussian() * 0.005D, rand.nextGaussian() * 0.005D);
+                i = i + 0.009D;
+                k = k + sp;
+            }
+        }

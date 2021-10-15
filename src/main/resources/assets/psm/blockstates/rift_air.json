@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model": "psm:rift_air" }
+    }
+}

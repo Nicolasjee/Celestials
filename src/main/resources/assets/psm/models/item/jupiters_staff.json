@@ -1,0 +1,47 @@
+{
+   "parent": "item/generated",
+   "textures": {
+       "layer0": "psm:items/jupiters_staff"
+     },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 356, 92, 54 ],
+      "translation": [ 0.00, 8.00, 1.00 ],
+      "scale": [ 1.30, 1.30, 1.30 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 250, 92, 54 ],
+      "translation": [ 0.00, 8.00, 1.00 ],
+      "scale": [ 1.30, 1.30, 1.30 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ -25, -90, 0 ],
+      "translation": [ 1.13, 3.20, 1.13 ],
+      "scale": [ 1.30, 1.30, 1.30 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 25, -90, 0 ],
+      "translation": [ 1.13, 3.20, 1.13 ],
+      "scale": [ 1.30, 1.30, 1.30 ]
+    },
+    "gui": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0.00, 0.00, 0.00 ],
+      "scale": [ 1.30, 1.30, 1.30 ]
+    },
+    "head": {
+      "rotation": [ -180, -0, -180 ],
+      "translation": [ -0.00, 13.00, 7.00 ],
+      "scale": [ 1.00, 1.00, 1.00 ]
+    },
+    "fixed": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0.00, 0.00, 0.00 ],
+      "scale": [ 1.00, 1.00, 1.00 ]
+    },
+    "ground": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0.00, 2.00, 0.00 ],
+      "scale": [ 1.30, 1.30, 1.30 ]
+    }
+  }}

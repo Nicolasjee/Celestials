@@ -1,0 +1,11 @@
+{
+
+    "variants":
+    {
+        "facing=north": { "model": "psm:crystal_splitter" },
+        "facing=east": { "model": "psm:crystal_splitter", "y": 90 },
+        "facing=south": { "model": "psm:crystal_splitter", "y": 180 },
+        "facing=west": { "model": "psm:crystal_splitter", "y": 270 }
+    }
+
+}

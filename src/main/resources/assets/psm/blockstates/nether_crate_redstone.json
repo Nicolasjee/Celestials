@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model": "psm:nether_crate_redstone" }
+    }
+}

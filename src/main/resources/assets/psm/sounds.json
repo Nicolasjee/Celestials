@@ -1,0 +1,217 @@
+{
+     
+        "item.effects.stasis": {
+        "category": "item",
+        "subtitle": "item.effects.stasis",
+        "sounds": [{"name": "psm:item/effects/stasis", "stream": true}]
+    },
+    
+        "item.effects.outpost": {
+        "category": "item",
+        "subtitle": "item.effects.outpost",
+        "sounds": [{"name": "psm:item/effects/outpost", "stream": true}]
+    },
+    
+        "item.effects.chestsold": {
+        "category": "item",
+        "subtitle": "item.effects.chestsold",
+        "sounds": [{"name": "psm:item/effects/chestsold", "stream": true}]
+    },
+    
+        "item.effects.badisland": {
+        "category": "item",
+        "subtitle": "item.effects.badisland",
+        "sounds": [{"name": "psm:item/effects/badisland", "stream": true}]
+    },
+    
+        "item.effects.opening2": {
+        "category": "item",
+        "subtitle": "item.effects.opening2",
+        "sounds": [{"name": "psm:item/effects/opening2", "stream": true}]
+    },
+    
+    
+         "item.effects.danger": {
+        "category": "item",
+        "subtitle": "item.effects.danger",
+        "sounds": [{"name": "psm:item/effects/danger", "stream": true}]
+    },
+    
+        "item.effects.marauder": {
+        "category": "item",
+        "subtitle": "item.effects.marauder",
+        "sounds": [{"name": "psm:item/effects/marauder", "stream": true}]
+    },
+    
+    
+        "item.effects.appearing": {
+        "category": "item",
+        "subtitle": "item.effects.appearing",
+        "sounds": [{"name": "psm:item/effects/appearing", "stream": true}]
+    },
+    
+    
+            "item.effects.lightsaberbuzz": {
+        "category": "item",
+        "subtitle": "item.effects.lightsaberbuzz",
+        "sounds": [{"name": "psm:item/effects/lightsaberbuzz", "stream": true}]
+    },
+    
+        "item.effects.teleport": {
+        "category": "item",
+        "subtitle": "item.effects.teleport",
+        "sounds": [{"name": "psm:item/effects/teleport", "stream": true}]
+    },
+    
+            "item.effects.mirror": {
+        "category": "item",
+        "subtitle": "item.effects.mirror",
+        "sounds": [{"name": "psm:item/effects/mirror", "stream": true}]
+    },
+    
+        "item.effects.checkpoint": {
+        "category": "item",
+        "subtitle": "item.effects.checkpoint",
+        "sounds": [{"name": "psm:item/effects/checkpoint", "stream": true}]
+    },
+    
+        "item.effects.lightsaber_hit1": {
+        "category": "item",
+        "subtitle": "item.effects.lightsaber_hit1",
+        "sounds": [{"name": "psm:item/effects/lightsaber_hit1", "stream": true}]
+    },
+    
+        "item.effects.lightsaber_open": {
+        "category": "item",
+        "subtitle": "item.effects.lightsaber_open",
+        "sounds": [{"name": "psm:item/effects/lightsaber_open", "stream": true}]
+    },
+    
+        "item.effects.demondead": {
+        "category": "item",
+        "subtitle": "item.effects.demondead",
+        "sounds": [{"name": "psm:item/effects/demondead", "stream": true}]
+    },
+    
+        "item.effects.lightsaber_close": {
+        "category": "item",
+        "subtitle": "item.effects.lightsaber_close",
+        "sounds": [{"name": "psm:item/effects/lightsaber_close", "stream": true}]
+    },
+    
+        "item.effects.reaperkill": {
+        "category": "item",
+        "subtitle": "item.effects.reaperkill",
+        "sounds": [{"name": "psm:item/effects/reaperkill", "stream": true}]
+    },
+    
+        "item.effects.willah": {
+        "category": "item",
+        "subtitle": "item.effects.willah",
+        "sounds": [{"name": "psm:item/effects/willah", "stream": true}]
+    },
+    
+        "item.effects.willhot": {
+        "category": "item",
+        "subtitle": "item.effects.willhot",
+        "sounds": [{"name": "psm:item/effects/willhot", "stream": true}]
+    },
+    
+            "item.effects.subimpact": {
+        "category": "item",
+        "subtitle": "item.effects.subimpact",
+        "sounds": [{"name": "psm:item/effects/subimpact", "stream": true}]
+    },
+    
+            "item.effects.rumble": {
+        "category": "item",
+        "subtitle": "item.effects.rumble",
+        "sounds": [{"name": "psm:item/effects/rumble", "stream": true}]
+    },
+    
+        "item.effects.unlock": {
+        "category": "item",
+        "subtitle": "item.effects.unlock",
+        "sounds": [{"name": "psm:item/effects/unlock", "stream": true}]
+    },
+    
+        "item.effects.earth": {
+        "category": "item",
+        "subtitle": "item.effects.earth",
+        "sounds": [{"name": "psm:item/effects/earth", "stream": true}]
+    },
+   
+        "item.effects.locked": {
+        "category": "item",
+        "subtitle": "item.effects.locked",
+        "sounds": [{"name": "psm:item/effects/locked", "stream": true}]
+    },
+    
+        "item.effects.lazer": {
+        "category": "item",
+        "subtitle": "item.effects.lazer",
+        "sounds": [{"name": "psm:item/effects/lazer", "stream": true}]
+    },
+    
+        "item.effects.charge": {
+        "category": "item",
+        "subtitle": "item.effects.charge",
+        "sounds": [{"name": "psm:item/effects/charge", "stream": true}]
+    },
+    
+    "item.effects.opening": {
+        "category": "item",
+        "subtitle": "item.effects.opening",
+        "sounds": [{"name": "psm:item/effects/opening", "stream": true}]
+    },
+    
+    
+    "item.effects.netherreactorphase1": {
+        "category": "item",
+        "subtitle": "item.effects.netherreactorphase1",
+        "sounds": [{"name": "psm:item/effects/netherreactorphase1", "stream": true}]
+    },
+    
+        "item.effects.aberyousee": {
+        "category": "item",
+        "subtitle": "item.effects.aberyousee",
+        "sounds": [{"name": "psm:item/effects/aberyousee", "stream": true}]
+    },    
+    
+        "item.effects.euhhaha": {
+        "category": "item",
+        "subtitle": "item.effects.euhhaha",
+        "sounds": [{"name": "psm:item/effects/euhhaha", "stream": true}]
+    },    
+    
+        "item.effects.hamidlayah": {
+        "category": "item",
+        "subtitle": "item.effects.hamidlayah",
+        "sounds": [{"name": "psm:item/effects/hamidlayah", "stream": true}]
+    },    
+    
+        "item.effects.ouhoo": {
+        "category": "item",
+        "subtitle": "item.effects.ouhoo",
+        "sounds": [{"name": "psm:item/effects/ouhoo", "stream": true}]
+    },    
+    
+        "item.effects.mysterioussound3": {
+        "category": "item",
+        "subtitle": "item.effects.mysterioussound3",
+        "sounds": [{"name": "psm:item/effects/mysterioussound3", "stream": true}]
+    },    
+    
+        "item.effects.epicfightingsound": {
+        "category": "item",
+        "subtitle": "item.effects.epicfightingsound",
+        "sounds": [{"name": "psm:item/effects/epicfightingsound", "stream": true}]
+    },        
+    
+    "immigrant": {"sounds": [{"name": "psm:item/effects/immigrant", "stream": true}]}
+  }
+    
+
+    
+    
+}

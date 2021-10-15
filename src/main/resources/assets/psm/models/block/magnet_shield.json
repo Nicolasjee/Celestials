@@ -1,0 +1,13 @@
+{
+    "parent": "block/orientable",
+    "textures": 
+    {
+        "particle": "psm:blocks/magnet_shield_sides",
+        "up": "psm:blocks/magnet_shield_up2",
+        "down": "psm:blocks/magnet_shield_sides",
+        "north": "psm:blocks/magnet_shield_sides",
+        "east": "psm:blocks/magnet_shield_sides",
+        "south": "psm:blocks/magnet_shield_sides",
+        "west": "psm:blocks/magnet_shield_sides"
+    }
+}

@@ -1,0 +1,230 @@
+package poseidon.mod.objects.tools.energyinductor;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import poseidon.mod.init.ItemInit;
+import poseidon.mod.objects.items.wand.ModAbilities;
+import poseidon.mod.objects.tools.ToolSword;
+import poseidon.mod.util.Utilities;
+import poseidon.mod.util.interfaces.EnergyInductorProperties;
+
+public class ItemEnergyInductor extends ToolSword implements EnergyInductorProperties {
+
+    boolean initialized = false;
+    boolean effect;
+    public boolean power1A = false;
+    public boolean power2A = false;
+    public boolean power3A = false;
+    public boolean power4A = false;
+    public String power1 = EMPTY;
+    public String power2 = EMPTY;
+    public String power3 = EMPTY;
+    public String power4 = EMPTY;
+    public int itemDurability = durability;
+    public int powerFocus = 1;
+    
+    int tick = 0;
+    
+    public ItemEnergyInductor(String name, int size, boolean b, ToolMaterial t) {
+        super(name, t, b);
+    }
+    
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
+
+        ItemStack stack = playerIn.getHeldItemMainhand();
+        
+        if(!playerIn.isSneaking()) {
+            
+            ItemEnergyInductorOff item = (ItemEnergyInductorOff) ItemInit.ENERGY_INDUCTOR_OFF;
+            EnergyInductorProperties.transfer(power1A, power2A, power3A, power4A, power1, power2, power3, power4, powerFocus, item);
+            int slot = playerIn.inventory.getSlotFor(stack);
+            System.out.println("l");
+            Utilities.printAll(power1A, power2A, power3A, power4A, power1, power2, power3, power4, powerFocus);
+            playerIn.inventory.removeStackFromSlot(playerIn.inventory.getSlotFor(stack));
+            playerIn.inventory.setInventorySlotContents(slot, new ItemStack(item));
+            
+            return new ActionResult(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
+            
+        }
+        
+        if(playerIn.isSneaking()) {
+            System.out.println("sff; " + power1 + ", " + powerFocus + ", dam: " + (ItemInit.ENERGY.getMaxUses() - stack.getItemDamage()) + ", and: " +  (EnergyInductorProperties.getPowerCost(power1)));
+            if(power1 != EMPTY && powerFocus == 1 && ((800 - stack.getItemDamage()) - EnergyInductorProperties.getPowerCost(power1)) > 0) {
+                
+                if(EnergyInductorProperties.hasPowerSwitch(power1)) power1A = !power1A;
+                EnergyInductorAbilities.activate(power1, playerIn, stack, worldIn);
+                
+            }
+            
+            if(power2 != EMPTY && powerFocus == 2 && stack.getItemDamage() - EnergyInductorProperties.getPowerCost(power2) > 0) {
+                
+                if(EnergyInductorProperties.hasPowerSwitch(power2)) power2A = !power2A;
+                EnergyInductorAbilities.activate(power2, playerIn, stack, worldIn);
+                
+            }
+            
+            if(power3 != EMPTY && powerFocus == 3 && stack.getItemDamage() - EnergyInductorProperties.getPowerCost(power3) > 0) {
+                
+                if(EnergyInductorProperties.hasPowerSwitch(power3)) power3A = !power3A;
+                EnergyInductorAbilities.activate(power3, playerIn, stack, worldIn);
+                
+            }
+            
+            if(power4 != EMPTY && powerFocus == 4 && stack.getItemDamage() - EnergyInductorProperties.getPowerCost(power4) > 0) {
+                
+                if(EnergyInductorProperties.hasPowerSwitch(power4)) power4A = !power4A;
+                EnergyInductorAbilities.activate(power4, playerIn, stack, worldIn);
+                
+            }
+            
+        }
+        
+        return new ActionResult(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
+        
+    }
+    
+    @Override
+    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+        
+        EntityPlayer player = null;
+        if(entityIn instanceof EntityPlayer) player = (EntityPlayer) entityIn;
+        if(player == null) return;
+        
+        if(!initialized && stack.hasTagCompound()) {
+            System.out.println("readNBT");
+            initialized = true;
+            readNBT(stack);
+        }
+        
+        if(!stack.hasTagCompound()) getNBT(stack);
+        
+        if(stack.hasTagCompound()) writeNBT(stack);
+        
+        //if one of the powers is CLOAK and it's activated
+        if((power1 == CLOAK && power1A) || (power2 == CLOAK && power2A) && Utilities.isInHand(stack, player)) {
+            if(tick == 5) {
+                if(stack.getItemDamage() - cloakCost < 0) {
+                    stack.setItemDamage(0);
+                    EnergyInductorProperties.setZero(stack);
+                    power2A = false;
+                    power1A = false;
+                    return;
+                }
+                stack.damageItem(cloakCost, player);
+                EnergyInductorProperties.damage(stack, cloakCost);
+                tick = 0;
+            }
+            tick++;
+        }
+        
+        if((power1 == PUSH && power1A) || (power2 == PUSH && power2A) && Utilities.isInHand(stack, player)) {
+            if(tick == 5) {
+                if(stack.getItemDamage() - pushCost < 0) {
+                    stack.setItemDamage(0);
+                    EnergyInductorProperties.setZero(stack);
+                    power2A = false;
+                    power1A = false;
+                    return;
+                }
+                ModAbilities.e(1, player, worldIn);
+                stack.damageItem(pushCost, player);
+                EnergyInductorProperties.damage(stack, pushCost);
+                tick = 0;
+            }
+            tick++;
+        }
+        
+        
+        
+    }
+
+    private void writeNBT(ItemStack stack) {
+        
+        if(stack.hasTagCompound()) {
+            
+            NBTTagCompound nbt = stack.getTagCompound();
+            
+            if(Utilities.hasKeys(stack, new String[] {"power1A", "power2A", "power3A", "power4A", "power1", "power2", "power3", "power4", "powerFocus", "itemDurability"})) {
+                
+                nbt.setString("power1", power1);
+                nbt.setString("power2", power2);
+                nbt.setString("power3", power3);
+                nbt.setString("power4", power4);
+                nbt.setBoolean("power1A", power1A);
+                nbt.setBoolean("power2A", power2A);
+                nbt.setBoolean("power3A", power3A);
+                nbt.setBoolean("power4A", power4A);
+                nbt.setInteger("itemDurabiliy", itemDurability);
+                nbt.setInteger("powerFocus", powerFocus);
+                
+            }
+            
+        }
+        
+        if(!stack.hasTagCompound()) getNBT(stack);
+        
+    }
+    
+    private void readNBT(ItemStack stack) {
+        
+        if(stack.hasTagCompound()) {
+            System.out.println("hasTag");
+            NBTTagCompound nbt = stack.getTagCompound();
+            
+            if(Utilities.hasKeys(stack, new String[] {"power1A", "power2A", "power3A", "power4A", "power1", "power2", "power3", "power4", "powerFocus", "itemDurability"})) {
+                
+                power1 = nbt.getString("power1");
+                power2 = nbt.getString("power2");
+                power3 = nbt.getString("power3");
+                power4 = nbt.getString("power4");
+                power1A = nbt.getBoolean("power1A");
+                power2A = nbt.getBoolean("power2A");
+                power3A = nbt.getBoolean("power3A");
+                power4A = nbt.getBoolean("power4A");
+                itemDurability = nbt.getInteger("itemDurabiliy");
+                powerFocus = nbt.getInteger("powerFocus");
+                System.out.println("fo: " + power1);
+            }
+            
+        }
+        
+        if(!stack.hasTagCompound()) getNBT(stack);
+        
+    }
+    
+    private void getNBT(ItemStack stack) {
+        NBTTagCompound nbt = new NBTTagCompound();
+        nbt.setString("power1", power1);
+        nbt.setString("power2", power2);
+        nbt.setString("power3", power3);
+        nbt.setString("power4", power4);
+        nbt.setBoolean("power1A", power1A);
+        nbt.setBoolean("power2A", power2A);
+        nbt.setBoolean("power3A", power3A);
+        nbt.setBoolean("power4A", power4A);
+        nbt.setInteger("itemDurability", itemDurability);
+        nbt.setInteger("powerFocus", powerFocus);
+        stack.setTagCompound(nbt);
+    }
+    
+    @Override
+    public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn) {
+        getNBT(stack);
+    }
+
+    public static void registerRecipe() {
+        GameRegistry.addShapedRecipe(new ResourceLocation("psm:energy_inductor_on"), new ResourceLocation("psm:smalladditions_items"), new ItemStack(ItemInit.ENERGY_INDUCTOR_OFF),
+                new Object[] {"   ", "   ", " E ", 'E', Items.DIAMOND});
+    }
+    
+}

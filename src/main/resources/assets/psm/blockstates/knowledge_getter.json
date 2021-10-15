@@ -1,0 +1,15 @@
+{
+
+    "variants":
+    {
+        "burning=false,facing=north": { "model": "psm:knowledge_getter" },
+        "burning=false,facing=east": { "model": "psm:knowledge_getter", "y": 90 },
+        "burning=false,facing=south": { "model": "psm:knowledge_getter", "y": 180 },
+        "burning=false,facing=west": { "model": "psm:knowledge_getter", "y": 270 },
+        "burning=true,facing=north": { "model": "psm:lit_knowledge_getter" },
+        "burning=true,facing=east": { "model": "psm:lit_knowledge_getter", "y": 90 },
+        "burning=true,facing=south": { "model": "psm:lit_knowledge_getter", "y": 180 },
+        "burning=true,facing=west": { "model": "psm:lit_knowledge_getter", "y":270 }
+    }
+
+}

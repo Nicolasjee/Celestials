@@ -1,0 +1,53 @@
+Multitools
+Obsidian tools
+Obsidian Hammer
+Demon Knife
+Angel Blade
+Velocity Staff
+Inferno Rod
+Chronomorfos
+Stasis
+Rift
+Mirror
+Experience Shard
+Elytron Crystal
+Seal
+Summoning Keys
+Bluestone Dust
+Monstrous Remains
+
+Knowledge: throug experience
+	   throug bookshelves + tileentity
+	+ Kind of knowledge? NBT
+	+ Enchant? / Curse?
+	  
+
+Atlas Core -> Celestial Stone
+Wing
+Obsidian Ingot
+Hot coals
+Upgrades
+Charms
+Synthesised Nether Wart
+Crates
+Tesla
+Upgrade Module
+Blocks
+	= 1dia
+Wizard: seals -> knowledge book (has no power) -> summoner + particle -> gives power
+knowledge + summoner -> forbidden knowledge
+synthesised experience + experience block + particles = spawn pieces of experience
+
+chest obsidian in structure on nether above bedrock -> ?? celestial crystal?
+sand chest
+
+
+
+
+
+
+Needed fixes: 
+
+Forbidden knowledge
+angel blade
+demon knife

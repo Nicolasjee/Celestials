@@ -1,0 +1,13 @@
+{
+    "parent": "block/orientable",
+    "textures": 
+    {
+        "particle": "psm:blocks/miner_front_off",
+        "up": "psm:blocks/miner_front_side1",
+        "down": "psm:blocks/miner_front_side1",
+        "north": "psm:blocks/miner_front_off",
+        "east": "psm:blocks/miner_side1",
+        "south": "psm:blocks/miner_side3",
+        "west": "psm:blocks/miner_side2"
+    }
+}

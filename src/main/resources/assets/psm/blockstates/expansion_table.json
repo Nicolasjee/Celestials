@@ -1,0 +1,15 @@
+{
+
+    "variants":
+    {
+        "burning=false,facing=north": { "model": "psm:expansion_table" },
+        "burning=false,facing=east": { "model": "psm:expansion_table", "y": 90 },
+        "burning=false,facing=south": { "model": "psm:expansion_table", "y": 180 },
+        "burning=false,facing=west": { "model": "psm:expansion_table", "y": 270 },
+        "burning=true,facing=north": { "model": "psm:lit_expansion_table" },
+        "burning=true,facing=east": { "model": "psm:lit_expansion_table", "y": 90 },
+        "burning=true,facing=south": { "model": "psm:lit_expansion_table", "y": 180 },
+        "burning=true,facing=west": { "model": "psm:lit_expansion_table", "y":270 }
+    }
+
+}

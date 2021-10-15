@@ -1,0 +1,13 @@
+{
+    "variants": 
+    {
+        "age=0": { "model": "psm:elytron_mineral_0" },
+        "age=1": { "model": "psm:elytron_mineral_1" },
+        "age=2": { "model": "psm:elytron_mineral_2" },
+        "age=3": { "model": "psm:elytron_mineral_3" },
+        "age=4": { "model": "psm:elytron_mineral_4" },
+        "age=5": { "model": "psm:elytron_mineral_5" },
+        "age=6": { "model": "psm:elytron_mineral_6" },
+        "age=7": { "model": "psm:elytron_mineral_7" }
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model": "psm:cage_trap_block" }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "parent": "block/orientable",
+    "textures": 
+    {
+        "particle": "psm:blocks/drawbridge_front_off",
+        "up": "psm:blocks/drawbridge_front_side1",
+        "down": "psm:blocks/drawbridge_front_side1",
+        "north": "psm:blocks/drawbridge_front_off",
+        "east": "psm:blocks/drawbridge_side1",
+        "south": "psm:blocks/drawbridge_side3",
+        "west": "psm:blocks/drawbridge_side2"
+    }
+}

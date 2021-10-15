@@ -1,0 +1,11 @@
+    @Override
+    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand,
+            EnumFacing facing, float hitX, float hitY, float hitZ) {
+
+        worldIn.setBlockState(pos, Blocks.MOB_SPAWNER.getDefaultState());
+        TileEntityMobSpawner spawner = (TileEntityMobSpawner) worldIn.getTileEntity(pos);
+        spawner.getSpawnerBaseLogic().setEntityId(new ResourceLocation("minecraft:zombie"));
+        spawner.getSpawnerBaseLogic().setDelayToMin(1);
+        
+        return EnumActionResult.SUCCESS;
+    }

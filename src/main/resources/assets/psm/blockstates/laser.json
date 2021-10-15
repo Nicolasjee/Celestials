@@ -1,0 +1,11 @@
+{
+
+    "variants":
+    {
+        "facing=north": { "model": "psm:laser" },
+        "facing=east": { "model": "psm:laser", "y": 90 },
+        "facing=south": { "model": "psm:laser", "y": 180 },
+        "facing=west": { "model": "psm:laser", "y": 270 }
+    }
+
+}

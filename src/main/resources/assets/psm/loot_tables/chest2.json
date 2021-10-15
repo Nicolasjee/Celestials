@@ -1,0 +1,44 @@
+{
+    "pools": [
+    
+        {
+            "name": "dragonSlayerTooth",
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:golden_apple",
+                    "weight": 20
+                    
+                }
+            ]
+        },
+        
+        
+        {
+            "name": "xd",
+            "rolls": {
+                "min": 2,
+                "max": 4
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_ingot",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 5
+                            }
+                        }
+                    ],
+                    "weight": 10
+                }
+            ]
+        }
+         
+    ]
+}
+

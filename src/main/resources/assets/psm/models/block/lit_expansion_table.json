@@ -1,0 +1,13 @@
+{
+    "parent": "block/orientable",
+    "textures": 
+    {
+        "particle": "psm:blocks/expansion_table_front_off",
+        "up": "psm:blocks/expansion_table_front_side1",
+        "down": "psm:blocks/expansion_table_front_side1",
+        "north": "psm:blocks/expansion_table_front_on",
+        "east": "psm:blocks/expansion_table_side1",
+        "south": "psm:blocks/expansion_table_side3",
+        "west": "psm:blocks/expansion_table_side2"
+    }
+}

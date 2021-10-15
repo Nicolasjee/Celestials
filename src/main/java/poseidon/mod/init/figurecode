@@ -1,0 +1,6 @@
+ffigure code:
+
+        if(!world.isRemote) ParticleUtil.figure((WorldServer)world, pos, tick, factor);
+        
+        tick += 2;
+        if(tick % 180 == 0) factor+=-(2*factor); 
